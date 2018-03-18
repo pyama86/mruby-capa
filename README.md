@@ -1,5 +1,7 @@
 # mruby-capacity   [![Build Status](https://travis-ci.org/pyama86/mruby-capacity.svg?branch=master)](https://travis-ci.org/pyama86/mruby-capacity)
-Capacity class
+
+Provides interface method of capacity of String class and array class.
+
 ## install by mrbgems
 - add conf.gem line to `build_config.rb`
 
@@ -13,13 +15,11 @@ end
 ```
 ## example
 ```ruby
-p Capacity.hi
-#=> "hi!!"
-t = Capacity.new "hello"
-p t.hello
-#=> "hello"
-p t.bye
-#=> "hello bye"
+s = "example"
+s.capacity
+=> 23
+s.capacity = 100
+=> 100
 ```
 
 ## License
