@@ -1,5 +1,7 @@
 # mruby-capacity   [![Build Status](https://travis-ci.org/pyama86/mruby-capacity.svg?branch=master)](https://travis-ci.org/pyama86/mruby-capacity)
 
+[![Build Status](https://travis-ci.org/pyama86/mruby-capacity.svg?branch=master)](https://travis-ci.org/pyama86/mruby-capacity)
+
 Provides interface method of capacity of String class and array class.
 
 ## install by mrbgems
