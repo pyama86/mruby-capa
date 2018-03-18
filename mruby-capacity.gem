@@ -1,5 +1,5 @@
 name: mruby-capacity
-description: Capacity class
+description: mruby capacity interface
 author: pyama86
 website: https://github.com/pyama86/mruby-capacity
 protocol: git
