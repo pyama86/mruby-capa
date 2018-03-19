@@ -24,12 +24,17 @@
   static mrb_value mrb_##type##_set_capacity(mrb_state *mrb, mrb_value self)                       \
   {                                                                                                \
     mrb_value v;                                                                                   \
-                                                                                                   \
+    mrb_int slen;                                                                                  \
+    struct R##class *s = mrb_##type##_ptr(self);                                                   \
+    slen = method_name##_LEN(s);                                                                   \
     mrb_get_args(mrb, "o", &v);                                                                    \
     if (!mrb_fixnum_p(v))                                                                          \
       mrb_raise(mrb, E_TYPE_ERROR, "non int value");                                               \
                                                                                                    \
-    return mrb_##type##_resize(mrb, self, mrb_fixnum(v));                                          \
+    if (method_name##_CAPA(s) != mrb_fixnum(v))                            \
+      mrb_##type##_resize(mrb, self, mrb_fixnum(v));                                               \
+    method_name##_SET_LEN(s, slen);                                                                \
+    return self;                                                                                   \
   }
 
 CAPACITY_INTERFACE(str, RSTR, String)
